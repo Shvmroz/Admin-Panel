@@ -1,38 +1,152 @@
-.App {
-  text-align: center;
+/*=========== General Css ===========*/
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+* {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* h1,
+h2,
+h3,
+h4,
+h5,
+h6 {} */
+
+h2 {
+  font-weight: bold;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+p {
+  font-size: smaller;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.my-clr {
+  color:#00B081 !important;
+}
+
+.btn-clr {
+  background-color:#004AAD !important;
+  border-radius: 7px !important;
+  text-transform: none !important;
+}
+
+
+/*=========== Login Page ===========*/
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.lo-go img,
+.the-logo img {
+  width: 150px;
+}
+
+.lo-go {
+  padding: 80px 0px 50px 30px;
+}
+.signin-txt{
+  width: 75%;
+}
+
+.login-form .login-heading .signup-txt a {
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.login-form {
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  display: flex;
+  padding-bottom: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.back-img {
+  background-image: url(./Images/medicine.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/*=========== Sign up Page ===========*/
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.left-side .the-logo {
+  padding: 30px 0px 30px 30px;
 }
+
+.left-side .signup-form {
+  justify-content: center;
+  display: flex;
+  margin-bottom: 30px;
+  height: 100vh;
+}
+
+.right-side {
+  background-color: #CCE9EF;
+  display: flex;
+  justify-content: center;
+  padding: 150px 50px 0px 50px;
+}
+
+.right-side .li-st p {
+  margin-left: 28px;
+}
+
+/* Signup Password icon and text */
+
+.validation-icon {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 10px;
+}
+
+.validation-icon p {
+  margin-bottom: 0;
+  display: inline;
+}
+/* forgot  password  css */
+.resetpassword-form {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+.forget-img {
+  background-image: url(./Images/hand.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+/*=========== Admin ===========*/
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+/*=========== DashBoard / Cards ===========*/
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.header-section {
+  margin-left: 30px;
+}
+.inner-card {
+  margin: 40px 10px 0px 10px;
+}
+
+.customer-section{
+  margin: 0px 20px ;
+}
+
