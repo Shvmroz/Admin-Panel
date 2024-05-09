@@ -271,7 +271,7 @@ const SignUpPage = () => {
                     </div>
                   </div>
                 </div>
-                <p className="text-center">
+                <p className="text-center m-2">
                   By clicking, you agree to Terms of Use, Privacy Policy and
                   Anti-Spam Policy.
                 </p>

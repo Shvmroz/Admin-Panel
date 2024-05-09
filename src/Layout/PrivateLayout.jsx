@@ -1,9 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Outlet } from "react-router";
 import { styled } from "@mui/material";
 import SideBar from "../Components/SideBar";
-import { useNavigate } from "react-router-dom";
-import Dashboard from "../Components/DashBoard";
+
 
 
 const APP_BAR_MOBILE = 64;
@@ -32,25 +31,6 @@ const Main = styled("div")(({ theme }) => ({
 
 export const PrivateLayout = () => {
 
-  const navigate = useNavigate();
-
-  const Token = () => {
-    const token = localStorage.getItem("token");
-    if (token && token != null || token != "undefined" || token != "") {
-      console.log(typeof token, 123);
-      return true;
-    }
-    else {
-      return false
-    }
-  };
-
-  useEffect(() => {
-    console.log("privatelayout")
-    if (Token()) {
-      navigate("/dashboard");
-    }
-  }, []);
 
   return (
     <>

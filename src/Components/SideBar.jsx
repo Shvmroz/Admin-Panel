@@ -18,7 +18,7 @@ import { Link } from "react-router-dom";
 import { AccountCircle } from "@mui/icons-material";
 import LeaderboardTwoTone from "@mui/icons-material/LeaderboardTwoTone";
 import AccountBox from "@mui/icons-material/AccountBox";
-import { Popover } from "@mui/material";
+import { CircularProgress, Popover } from "@mui/material";
 import { logout } from "./logout";
 import { useNavigate } from 'react-router-dom';
 import ChangePasswordModal from "./ChangePassword";
@@ -66,13 +66,19 @@ function SideBar() {
   };
 
   // handle logout
+  const [loading, setLoading] = useState(false);
+
   const handleLogout = async () => {
-    const success = await logout(navigate);
-    if (success) {
-      console.log('Logout successful');
-    } else {
-      console.log('Logout failed');
-    }
+    setLoading(true); // Show loader
+    setTimeout(async () => {
+      const success = await logout(navigate);
+      setLoading(false); // Hide loader
+      if (success) {
+        console.log('Logout successful');
+      } else {
+        console.log('Logout failed');
+      }
+    }, 2000); // 2 seconds timeout
   };
 
   // Drop down Menu on profile icon click
@@ -207,13 +213,20 @@ function SideBar() {
                   </ListItem>
                   <ChangePasswordModal open={openModal} onClose={handleCloseModal} />
 
+                  {/*  Replace the "Log out" text with a spinner during the logout process */}
                   <ListItem disablePadding>
                     <ListItemButton onClick={handleLogout}>
-                      <ListItemText primary="Log out" />
+                      {loading ? (
+                        // Show spinner if loading
+                        <CircularProgress size={24} />
+                      ) : (
+                        // Show text if not loading
+                        <ListItemText primary="Log out" />
+                      )}
                     </ListItemButton>
                   </ListItem>
+
                 </List>
-                
               </Popover>
             </Box>
           </div>
