@@ -68,6 +68,11 @@ const LoginPage = () => {
       setLoading(false); // Stop loading
     }
   };
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      handleLogin();
+    }
+  };
 
   return (
     <>
@@ -117,6 +122,7 @@ const LoginPage = () => {
                       type={showPassword ? "text" : "password"}
                       value={password}
                       onChange={handlePasswordChange}
+                      onKeyPress={handleKeyPress} // Handle Enter key press
                       endAdornment={
                         <InputAdornment position="end">
                           <IconButton
@@ -131,6 +137,7 @@ const LoginPage = () => {
                       }
                       label="Password"
                     />
+
                   </FormControl>
                 </div>
                 {loginError && (
