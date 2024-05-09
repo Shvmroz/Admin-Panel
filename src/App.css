@@ -36,11 +36,11 @@ a {
 }
 
 .my-clr {
-  color:#00B081 !important;
+  color:#E5AD05 !important;
 }
 
 .btn-clr {
-  background-color:#004AAD !important;
+  background-color:#CA5E54 !important;
   border-radius: 7px !important;
   text-transform: none !important;
 }
@@ -93,7 +93,7 @@ a {
 }
 
 .right-side {
-  background-color: #CCE9EF;
+  background-color: #fdf8e9;
   display: flex;
   justify-content: center;
   padding: 150px 50px 0px 50px;

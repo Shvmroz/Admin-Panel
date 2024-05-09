@@ -15,7 +15,7 @@ import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import { Link } from "react-router-dom";
-import { AccountCircle } from "@mui/icons-material";
+import { AccountCircle, SupportAgent } from "@mui/icons-material";
 import LeaderboardTwoTone from "@mui/icons-material/LeaderboardTwoTone";
 import AccountBox from "@mui/icons-material/AccountBox";
 import { CircularProgress, Popover } from "@mui/material";
@@ -100,7 +100,7 @@ function SideBar() {
         <img
           src={logo}
           alt="logo"
-          style={{ width: "60%", display: "flex", margin: "auto" }}
+          style={{ width: "80%", display: "flex", margin: "auto" }}
         />
       </Toolbar>
 
@@ -116,10 +116,10 @@ function SideBar() {
             sx={{
               borderRadius: 2,
               '&.Mui-selected': {
-                backgroundColor: '#EEF3F1',
+                backgroundColor: '#FFE7DA',
               },
               '&.Mui-selected:hover': {
-                backgroundColor: '#EEF3F1',
+                backgroundColor: '#FFE7DA',
               },
             }}
           >
@@ -139,10 +139,10 @@ function SideBar() {
             sx={{
               borderRadius: 2,
               '&.Mui-selected': {
-                backgroundColor: '#EEF3F1',
+                backgroundColor: '#FFE7DA',
               },
               '&.Mui-selected:hover': {
-                backgroundColor: '#EEF3F1',
+                backgroundColor: '#FFE7DA',
               },
             }}
           >
@@ -154,6 +154,29 @@ function SideBar() {
         </ListItem>
 
 
+        {/* Support Ticket */}
+        <ListItem>
+          <ListItemButton
+            component={Link}
+            to="/Ticket"
+            selected={location.pathname === "/Ticket"}
+            sx={{
+              borderRadius: 2,
+              '&.Mui-selected': {
+                backgroundColor: '#FFE7DA',
+              },
+              '&.Mui-selected:hover': {
+                backgroundColor: '#FFE7DA',
+              },
+            }}
+          >
+            <ListItemIcon>
+              <SupportAgent />
+            </ListItemIcon>
+            <ListItemText primary="Support Ticket" />
+          </ListItemButton>
+        </ListItem>
+        
       </List>
       <Divider />
     </div>

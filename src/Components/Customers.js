@@ -59,7 +59,7 @@ const Customer = () => {
       };
 
       const response = await axios.post(
-        `http://146.190.164.174:4000/api/customer/get_customers?page=${page}&limit=${rowsPerPage}`,
+        `${apiUrl}api/customer/get_customers?page=${page}&limit=${rowsPerPage}`,
         {},
         { headers: headers }
       );
@@ -139,7 +139,7 @@ const Customer = () => {
               {columns.map((column) => (
                 <TableCell
                   key={column.id}
-                  style={{ minWidth: column.minWidth ,backgroundColor: '#EEF3F1' , }}
+                  style={{ minWidth: column.minWidth ,backgroundColor: '#FFE7DA' , }}
                  
                 >
                   {column.label}

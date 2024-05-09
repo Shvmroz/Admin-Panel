@@ -11,6 +11,7 @@ import { PublicLayout } from './Layout/PublicLayout';
 import { PrivateLayout } from './Layout/PrivateLayout';
 import PageNotFound from './Components/PageNotFound'
 import SideBar from './Components/SideBar';
+import { SupportTicket } from './Components/SupportTicket';
 
 export const RoutesFile = () => {
     const navigate = useNavigate();
@@ -38,6 +39,7 @@ export const RoutesFile = () => {
                     <Route path='/sidebar' element={<SideBar />} />
                     <Route path='/dashboard' element={<Dashboard />} />
                     <Route path='/customer' element={<Customers />} />
+                    <Route path='/Ticket' element={<SupportTicket />} />
                     <Route path='/add-new-customer' element={<AddCustomerForm />} />
                     <Route path='/edit-customer/:id' element={<EditCustomer />} />
                     <Route path="*" element={<PageNotFound />} />

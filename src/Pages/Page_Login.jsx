@@ -92,7 +92,7 @@ const LoginPage = () => {
               <form>
                 <div className="login-heading">
                   <h2 className="signin-txt mb-3">
-                    Sign in to Your DAWA Khana account
+                    Sign in to Your ADMIN Panel account
                   </h2>
                   <p className="mb-3">
                     Don't have an account yet?
