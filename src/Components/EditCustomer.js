@@ -8,6 +8,9 @@ import { useNavigate } from "react-router";
 import Alert from "@mui/material/Alert"; // Import Alert from MUI
 
 function EditCustomer() {
+
+	const apiUrl = process.env.REACT_APP_API_URL;
+	
 	const { id } = useParams();
 	const [loading, setLoading] = useState(true);
 	const [customerData, setCustomerData] = useState({
@@ -66,7 +69,7 @@ function EditCustomer() {
 				"x-sh-auth": token,
 			};
 			const response = await axios.put(
-				`http://146.190.164.174:4000/api/customer/edit_customer_by_admin/${id}`,
+				` ${apiUrl}api/customer/edit_customer_by_admin/${id}`,
 				customerData,
 				{
 					headers: headers,

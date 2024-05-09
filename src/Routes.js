@@ -18,8 +18,7 @@ export const RoutesFile = () => {
         const token = localStorage.getItem("token");
         if (!token) {
             navigate('/');
-        }
-        else if (token) {
+        } else {
             navigate('/dashboard');
         }
     }, []);

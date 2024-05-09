@@ -4,6 +4,8 @@ import { Box, Card, CardContent, Typography } from '@mui/material';
 import { GroupsRounded, LanguageRounded, NotInterestedRounded } from '@mui/icons-material';
 
 const Dashboard = () => {
+  const apiUrl = process.env.REACT_APP_API_URL;
+
   const [totalUser, setTotalUser] = useState(0);
   useEffect(() => {
     fetchData();
@@ -15,7 +17,7 @@ const Dashboard = () => {
       const headers = {
         'x-sh-auth': token,
       };
-      const response = await axios.post(`http://146.190.164.174:4000/api/customer/get_customers`, {}, { headers: headers });
+      const response = await axios.post(`${apiUrl}api/customer/get_customers`, {}, { headers: headers });
       setTotalUser(response.data.count);
       console.log("successful", response.data)
     } catch (error) {

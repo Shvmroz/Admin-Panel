@@ -6,6 +6,8 @@ import { useNavigate } from "react-router-dom";
 import CloseIcon from '@mui/icons-material/Close';
 
 export const AddCustomerForm = () => {
+  const apiUrl = process.env.REACT_APP_API_URL;
+
   const navigate = useNavigate();
 
   const [showPassword, setShowPassword] = useState(false);
@@ -38,7 +40,7 @@ export const AddCustomerForm = () => {
     setLoading(true);
     try {
       const response = await axios.post(
-        "http://146.190.164.174:4000/api/customer/signup_customer",
+        `${apiUrl}api/customer/signup_customer`,
         {
           first_name: formData.firstName,
           last_name: formData.lastName,

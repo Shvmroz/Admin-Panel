@@ -15,7 +15,12 @@ import { Link, useNavigate } from "react-router-dom";
 import logo from "../Images/logo.png";
 
 const LoginPage = () => {
+
+  const apiUrl = process.env.REACT_APP_API_URL;
+ 
+
   const navigate = useNavigate();
+
   const [loading, setLoading] = useState(false);
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -46,7 +51,7 @@ const LoginPage = () => {
     setLoading(true); // Start loading
     try {
       const response = await axios.post(
-        "http://146.190.164.174:4000/api/app_api/login",
+        `${apiUrl}api/app_api/login`,
         {
           email: email,
           password: password,

@@ -10,6 +10,8 @@ import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import axios from "axios";
 
 const ChangePasswordModal = ({ open, onClose }) => {
+  const apiUrl = process.env.REACT_APP_API_URL;
+  
   const [oldPassword, setOldPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [confirmNewPassword, setConfirmNewPassword] = useState("");
@@ -54,7 +56,7 @@ const ChangePasswordModal = ({ open, onClose }) => {
         confirm_password: confirmNewPassword,
       };
       const response = await axios.put(
-        `http://146.190.164.174:4000/api/app_api/change_password`,
+        `${apiUrl}api/app_api/change_password`,
         reqObj,
         {
           headers: headers,

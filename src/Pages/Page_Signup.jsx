@@ -9,6 +9,8 @@ import axios from "axios";
 
 const SignUpPage = () => {
   const navigate = useNavigate();
+  const apiUrl = process.env.REACT_APP_API_URL;
+
   const [number, setNumber] = useState("");
   const [name, setName] = useState("");
   const [nameError, setNameError] = useState(false);
@@ -101,8 +103,7 @@ const SignUpPage = () => {
     const headers = { "Content-Type": "application/json" };
   
     try {
-      const response = await axios.post(
-        "http://146.190.164.174:4000/api/admin/signup_admin",
+      const response = await axios.post( `${apiUrl}api/admin/signup_admin`,
         reqObj,
         { headers }
       );

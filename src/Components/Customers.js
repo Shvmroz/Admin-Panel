@@ -32,6 +32,7 @@ const columns = [
 ];
 
 const Customer = () => {
+  const apiUrl = process.env.REACT_APP_API_URL;
   const navigate = useNavigate();
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
@@ -85,7 +86,7 @@ const Customer = () => {
         "x-sh-auth": token,
       };
       await axios.delete(
-        `http://146.190.164.174:4000/api/customer/delete_customer/${userId}`,
+        `${apiUrl}api/customer/delete_customer/${userId}`,
         { headers: headers }
       );
       setCustomers(customers.filter((customer) => customer.user._id !== userId));
