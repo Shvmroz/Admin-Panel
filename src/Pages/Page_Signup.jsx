@@ -99,11 +99,11 @@ const SignUpPage = () => {
       password: password,
       status: true,
     };
-  
+
     const headers = { "Content-Type": "application/json" };
-  
+
     try {
-      const response = await axios.post( `${apiUrl}api/admin/signup_admin`,
+      const response = await axios.post(`${apiUrl}api/admin/signup_admin`,
         reqObj,
         { headers }
       );
@@ -122,7 +122,7 @@ const SignUpPage = () => {
     } catch (error) {
       console.error("SignUp error:", error.response);
       setLoading(false); // Set loading back to false
-    }  
+    }
   };
 
   return (
@@ -136,12 +136,12 @@ const SignUpPage = () => {
           </div>
           {/* ===== Form SignUp ============================== */}
           <div className="container signup-form">
-        
+
             {loading ? (
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', marginTop: '50px' }}>
-              <CircularProgress />
-            </div>
-            
+                <CircularProgress />
+              </div>
+
             ) : (
               <form>
                 <div>
@@ -286,7 +286,7 @@ const SignUpPage = () => {
                 >
                   Create My Account
                 </Button>
-               
+
               </form>
             )}
           </div>

@@ -32,7 +32,7 @@ function EditCustomer() {
 					"x-sh-auth": token,
 				};
 				const response = await axios.get(
-					`http://146.190.164.174:4000/api/customer/detail_customer_by_admin/${id}`,
+					`${apiUrl}api/customer/detail_customer_by_admin/${id}`,
 					{ headers: headers }
 				);
 				const customer = response.data.data;
@@ -153,14 +153,14 @@ function EditCustomer() {
 					<div style={{ textAlign: 'right', }}>
 						<div>
 							<Button
-								className="btn-clr"
-
-								variant="contained"
+								color="error"
+								variant="outlined"
 								onClick={() => navigate("/customer")}
 								style={{ marginTop: "16px", marginRight: "16px" }}
 							>
 								Cancel
 							</Button>
+							
 
 							<Button
 								className="btn-clr"
