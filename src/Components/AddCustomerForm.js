@@ -72,7 +72,7 @@ export const AddCustomerForm = () => {
   return (
     <div>
       <div className="container">
-        <h2><b>Add New Customer</b></h2>
+        <h2><span className="my-clr">Add</span><b> Customer.</b></h2>
         <div className="form-container">
           {loading ? (
             <CircularProgress color="success" sx={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)" }} />
@@ -170,7 +170,7 @@ export const AddCustomerForm = () => {
                 </div>
               </div>
               <div style={{ textAlign: 'right', }}>
-                <Button startIcon={<CloseIcon />} sx={{ mt: 4, mr: 2 }} variant="outlined" onClick={() => navigate("/customer")}>
+                <Button startIcon={<CloseIcon />} sx={{ mt: 4, mr: 2 }} variant="outlined" color="warning" onClick={() => navigate("/customer")}>
                   Cancel
                 </Button>
                 <Button className="btn-clr" sx={{ mt: 4 }} variant="contained" type="submit">

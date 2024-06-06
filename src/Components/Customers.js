@@ -117,7 +117,7 @@ const Customer = () => {
       </div>
       <div style={{ marginBottom: 20, display: 'flex', justifyContent: 'space-between' }}>
         <div>
-          <h2 ><b>Customers</b></h2>
+          <h2 className="my-clr" ><b>Customers</b></h2>
         </div>
         <div>
           <TextField

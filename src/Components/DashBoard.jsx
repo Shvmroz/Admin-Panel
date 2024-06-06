@@ -28,13 +28,13 @@ const Dashboard = () => {
   return (
     <>
       <div className="header-section">
-        <h2>Hi, Welcome Back</h2>
+        <h2><span className='my-clr'>Hi,</span> Welcome Back</h2>
       </div>
       <div className="cards-section container">
         <div className="row">
           <div className="col-md-12 col-lg-4">
             <div className="inner-card">
-              <Card sx={{ padding: '20px', backgroundColor: '#EAFCD4', borderRadius: 4, textAlign: 'center' }}>
+              <Card sx={{ padding: '20px', backgroundColor: '#EAFCD4', borderRadius: 4, textAlign: 'center', boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.2)' }}>
                 <CardContent sx={{ color: '#0D640F' }}>
                   <Box sx={{ height: 60, width: 60, backgroundColor: '#D0EFBC', borderRadius: '50%', margin: 'auto', display: 'flex', justifyContent: 'center', alignItems: 'center', boxShadow: 'inset 10px 2px 10px rgba(0, 0, 0, 0.1)', marginBottom: '30px' }}>
                     <GroupsRounded />
@@ -49,7 +49,7 @@ const Dashboard = () => {
           </div>
           <div className="col-md-12 col-lg-4">
             <div className="inner-card">
-              <Card sx={{ padding: '20px', backgroundColor: '#D0F2FE', borderRadius: 4, textAlign: 'center' }}>
+              <Card sx={{ padding: '20px', backgroundColor: '#D0F2FE', borderRadius: 4, textAlign: 'center', boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.2)' }}>
                 <CardContent sx={{ color: '#275FA5' }}>
                   <Box sx={{ height: 60, width: 60, backgroundColor: '#B7DDF6', borderRadius: '50%', margin: 'auto', display: 'flex', justifyContent: 'center', alignItems: 'center', boxShadow: 'inset 10px 2px 10px rgba(0, 0, 0, 0.1)', marginBottom: '30px' }}>
                     <LanguageRounded />
@@ -65,7 +65,7 @@ const Dashboard = () => {
           </div>
           <div className="col-md-12 col-lg-4">
             <div className="inner-card">
-              <Card sx={{ padding: '20px', backgroundColor: '#e5e0ff', borderRadius: 4, textAlign: 'center' }}>
+              <Card sx={{ padding: '20px', backgroundColor: '#e5e0ff', borderRadius: 4, textAlign: 'center', boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.2)' }}>
                 <CardContent sx={{ color: '#661f77' }}>
                   <Box sx={{ height: 60, width: 60, backgroundColor: '#ebcfff', borderRadius: '50%', margin: 'auto', display: 'flex', justifyContent: 'center', alignItems: 'center', boxShadow: 'inset 10px 2px 10px rgba(0, 0, 0, 0.1)', marginBottom: '30px' }}>
                     <NotInterestedRounded />
