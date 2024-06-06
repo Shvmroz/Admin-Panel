@@ -21,14 +21,14 @@ const ForgotPassword = () => {
 
     return (
         <>
-            <div className="container-fluid ">
+            <div className="container-fluid forget-page ">
                 <div className="row">
-                    <div className=" col-md-6 col-lg-7">
-                        <div className="lo-go">
-                            <Link to={`/`}><img className='img-fluid' src={logo} alt="" /></Link>
-                        </div>
+                    <div className=" col-md-6 col-lg-7 d-flex align-items-center">
                         {/* ============= Form ============= */}
-                        <div className='container resetpassword-form '>
+                        <div className='container resetpassword-form shadow-smy'>
+                            <div className="lo-go">
+                                <Link to={`/`}><img className='img-fluid' src={logo} alt="" /></Link>
+                            </div>
                             <form onSubmit={handleSubmit}>
                                 <h2>Forgot Your Password? </h2>
                                 <p> Enter your registered email to Reset your password</p>
@@ -44,7 +44,7 @@ const ForgotPassword = () => {
                                     />
                                 </div>
                                 <Button className='btn-clr' type="submit" variant="contained" fullWidth>Submit</Button>
-        
+
                                 {emailFound && (
                                     <div className='mt-4'>
                                         <h6>Enter new password</h6>
@@ -63,7 +63,7 @@ const ForgotPassword = () => {
                                     </div>
                                 )}
                                 {(!emailFound && email) && <p className='m-2'>No Email Found</p>}
-                               
+
                             </form>
                         </div>
                     </div>

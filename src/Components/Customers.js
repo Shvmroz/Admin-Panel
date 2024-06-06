@@ -139,8 +139,8 @@ const Customer = () => {
               {columns.map((column) => (
                 <TableCell
                   key={column.id}
-                  style={{ minWidth: column.minWidth ,backgroundColor: '#FFE7DA' , }}
-                 
+                  style={{ minWidth: column.minWidth, backgroundColor: '#f2eae1', }}
+
                 >
                   {column.label}
                 </TableCell>
@@ -162,7 +162,7 @@ const Customer = () => {
                   <TableCell>{customer.first_name}</TableCell>
                   <TableCell>{customer.last_name}</TableCell>
                   <TableCell >{customer.user.email}</TableCell>
-                  <TableCell ><span style={{  backgroundColor: '#E4F8DD', color: '#3AA62E', padding: '8px', borderRadius: '6px', fontSize: 'small', fontWeight: 'bold' }}>
+                  <TableCell ><span style={{ backgroundColor: '#E4F8DD', color: '#3AA62E', padding: '8px', borderRadius: '6px', fontSize: 'small', fontWeight: 'bold' }}>
                     {customer.account_status}</span></TableCell>
                   <TableCell>{customer.customer_type}</TableCell>
                   <TableCell>
@@ -174,7 +174,7 @@ const Customer = () => {
                         <Edit />
                       </IconButton>
                     </Tooltip>
-                    
+
                     <Tooltip title="Delete" arrow>
                       <IconButton
                         color="error"
@@ -200,7 +200,7 @@ const Customer = () => {
         onPageChange={handleChangePage}
         onRowsPerPageChange={handleChangeRowsPerPage}
         rowsPerPageOptions={[5, 15, 25, 50]}
-      
+
       />
     </div>
   );

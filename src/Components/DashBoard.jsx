@@ -65,9 +65,9 @@ const Dashboard = () => {
           </div>
           <div className="col-md-12 col-lg-4">
             <div className="inner-card">
-              <Card sx={{ padding: '20px', backgroundColor: '#FFE7DA', borderRadius: 4, textAlign: 'center' }}>
-                <CardContent sx={{ color: '#771F33' }}>
-                  <Box sx={{ height: 60, width: 60, backgroundColor: '#F3C6BE', borderRadius: '50%', margin: 'auto', display: 'flex', justifyContent: 'center', alignItems: 'center', boxShadow: 'inset 10px 2px 10px rgba(0, 0, 0, 0.1)', marginBottom: '30px' }}>
+              <Card sx={{ padding: '20px', backgroundColor: '#e5e0ff', borderRadius: 4, textAlign: 'center' }}>
+                <CardContent sx={{ color: '#661f77' }}>
+                  <Box sx={{ height: 60, width: 60, backgroundColor: '#ebcfff', borderRadius: '50%', margin: 'auto', display: 'flex', justifyContent: 'center', alignItems: 'center', boxShadow: 'inset 10px 2px 10px rgba(0, 0, 0, 0.1)', marginBottom: '30px' }}>
                     <NotInterestedRounded />
                   </Box>
 

@@ -20,8 +20,9 @@ import LeaderboardTwoTone from "@mui/icons-material/LeaderboardTwoTone";
 import AccountBox from "@mui/icons-material/AccountBox";
 import { CircularProgress, Popover } from "@mui/material";
 import { logout } from "./logout";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import ChangePasswordModal from "./ChangePassword";
+import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 
 const drawerWidth = 240;
 
@@ -35,12 +36,10 @@ function SideBar() {
 
   useEffect(() => {
     // Retrieve email from local storage
-    console.log("Sidebar check")
+    console.log("Sidebar check");
     const storedEmail = localStorage.getItem("email");
     setEmail(storedEmail);
   }, []);
-
-
 
   const handleOpenModal = () => {
     setOpenModal(true);
@@ -74,9 +73,9 @@ function SideBar() {
       const success = await logout(navigate);
       setLoading(false); // Hide loader
       if (success) {
-        console.log('Logout successful');
+        console.log("Logout successful");
       } else {
-        console.log('Logout failed');
+        console.log("Logout failed");
       }
     }, 2000); // 2 seconds timeout
   };
@@ -95,15 +94,14 @@ function SideBar() {
   const open = Boolean(anchorEl);
 
   const drawer = (
-    <div>
+    <div className="drawer">
       <Toolbar>
         <img
           src={logo}
           alt="logo"
-          style={{ width: "80%", display: "flex", margin: "auto" }}
+          style={{ width: "100%", display: "flex", margin: "auto" }}
         />
       </Toolbar>
-
 
       <Divider />
       {/* Dashboard */}
@@ -115,11 +113,11 @@ function SideBar() {
             selected={location.pathname === "/dashboard"}
             sx={{
               borderRadius: 2,
-              '&.Mui-selected': {
-                backgroundColor: '#FFE7DA',
+              "&.Mui-selected": {
+                backgroundColor: "#feaf00",
               },
-              '&.Mui-selected:hover': {
-                backgroundColor: '#FFE7DA',
+              "&.Mui-selected:hover": {
+                backgroundColor: "#feaf00",
               },
             }}
           >
@@ -138,11 +136,11 @@ function SideBar() {
             selected={location.pathname === "/customer"}
             sx={{
               borderRadius: 2,
-              '&.Mui-selected': {
-                backgroundColor: '#FFE7DA',
+              "&.Mui-selected": {
+                backgroundColor: "#feaf00",
               },
-              '&.Mui-selected:hover': {
-                backgroundColor: '#FFE7DA',
+              "&.Mui-selected:hover": {
+                backgroundColor: "#feaf00",
               },
             }}
           >
@@ -153,7 +151,6 @@ function SideBar() {
           </ListItemButton>
         </ListItem>
 
-
         {/* Support Ticket */}
         <ListItem>
           <ListItemButton
@@ -162,11 +159,11 @@ function SideBar() {
             selected={location.pathname === "/Ticket"}
             sx={{
               borderRadius: 2,
-              '&.Mui-selected': {
-                backgroundColor: '#FFE7DA',
+              "&.Mui-selected": {
+                backgroundColor: "#feaf00",
               },
-              '&.Mui-selected:hover': {
-                backgroundColor: '#FFE7DA',
+              "&.Mui-selected:hover": {
+                backgroundColor: "#feaf00",
               },
             }}
           >
@@ -176,7 +173,6 @@ function SideBar() {
             <ListItemText primary="Support Ticket" />
           </ListItemButton>
         </ListItem>
-        
       </List>
       <Divider />
     </div>
@@ -222,23 +218,52 @@ function SideBar() {
                   horizontal: "center",
                 }}
               >
-                <List>
-                  <ListItem disablePadding>
+                <List sx={{ margin: "5px" }}>
+                  <ListItem
+                    disablePadding
+                    sx={{
+                      "&:hover": {
+                        backgroundColor: "#feaf00",
+                        borderRadius: "10px",
+                      },
+                    }}
+                  >
                     <ListItemButton>
                       <ListItemText primary={email} />
                     </ListItemButton>
                   </ListItem>
 
-                  <ListItem disablePadding>
+                  <ListItem
+                    disablePadding
+                    sx={{
+                      "&:hover": {
+                        backgroundColor: "#feaf00",
+                        borderRadius: "10px",
+                      },
+                    }}
+                  >
                     <ListItemButton onClick={handleOpenModal}>
                       <ListItemText primary="Change Password" />
                     </ListItemButton>
                   </ListItem>
-                  <ChangePasswordModal open={openModal} onClose={handleCloseModal} />
+                  <ChangePasswordModal
+                    open={openModal}
+                    onClose={handleCloseModal}
+                  />
 
-                  {/*  Replace the "Log out" text with a spinner during the logout process */}
-                  <ListItem disablePadding>
+                  <ListItem
+                    disablePadding
+                    sx={{
+                      "&:hover": {
+                        backgroundColor: "#feaf00",
+                        borderRadius: "10px",
+                      },
+                    }}
+                  >
                     <ListItemButton onClick={handleLogout}>
+                      <ListItemIcon>
+                        <ExitToAppIcon />
+                      </ListItemIcon>
                       {loading ? (
                         // Show spinner if loading
                         <CircularProgress size={24} />
@@ -248,7 +273,6 @@ function SideBar() {
                       )}
                     </ListItemButton>
                   </ListItem>
-
                 </List>
               </Popover>
             </Box>

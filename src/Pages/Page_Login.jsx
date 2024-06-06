@@ -15,9 +15,7 @@ import { Link, useNavigate } from "react-router-dom";
 import logo from "../Images/logo.png";
 
 const LoginPage = () => {
-
   const apiUrl = process.env.REACT_APP_API_URL;
- 
 
   const navigate = useNavigate();
 
@@ -50,14 +48,11 @@ const LoginPage = () => {
   const handleLogin = async () => {
     setLoading(true); // Start loading
     try {
-      const response = await axios.post(
-        `${apiUrl}api/app_api/login`,
-        {
-          email: email,
-          password: password,
-          type: 0,
-        }
-      );
+      const response = await axios.post(`${apiUrl}api/app_api/login`, {
+        email: email,
+        password: password,
+        type: 0,
+      });
       if (response.status === 200) {
         localStorage.setItem("token", response.data.token);
         localStorage.setItem("email", email);
@@ -74,21 +69,21 @@ const LoginPage = () => {
     }
   };
   const handleKeyPress = (e) => {
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       handleLogin();
     }
   };
 
   return (
     <>
-      <div className="container-fluid">
-        <div className="row">
+      <div className="container-fluid page-login">
+        <div className="row d-flex align-items-center ">
           <div className=" col-md-6 col-lg-7">
-            <div className="lo-go">
-              <img className="img-fluid" src={logo} alt="" />
-            </div>
+                    <div className="lo-go">
+                      <img className="img-fluid " src={logo} alt="" />
+                    </div>
             {/* ============= Form Login ================== */}
-            <div className="container login-form">
+            <div className="container login-form shadow">
               <form>
                 <div className="login-heading">
                   <h2 className="signin-txt mb-3">
@@ -142,11 +137,12 @@ const LoginPage = () => {
                       }
                       label="Password"
                     />
-
                   </FormControl>
                 </div>
                 {loginError && (
-                  <p style={{ color: "red", textAlign: "center" }}>{loginError}</p>
+                  <p style={{ color: "red", textAlign: "center" }}>
+                    {loginError}
+                  </p>
                 )}
                 <div className="mb-3 form-forget">
                   <Link to={`/ResetPassword`}>
@@ -164,7 +160,11 @@ const LoginPage = () => {
                   onClick={handleLogin}
                   disabled={loading}
                 >
-                  {loading ? <CircularProgress size={24} sx={{ color: "white" }} /> : "Sign in"}
+                  {loading ? (
+                    <CircularProgress size={24} sx={{ color: "white" }} />
+                  ) : (
+                    "Sign in"
+                  )}
                 </Button>
               </form>
             </div>
